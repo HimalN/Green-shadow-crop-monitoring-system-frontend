@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Rakkas&display=swap');
+html body{
+    background-color:  #D3EE98;
+}
+
+.login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1000px;
+    height: 550px;
+    background: #A0D683;
+    border-radius: 15px 15px 15px 15px;
+}
+.login-column{
+    display: flex;
+}
+#section-left{
+    flex: 1;
+}
+#section-left>img{
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    top: 0;
+
+}
+#image-text{
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 490px;
+    width: 350px;
+    font-family: "Geist Mono";
+    font-size: 25px;
+}
+#section-right{
+    height: 550px;
+    width: 450px;
+    background: #72BF78;
+    position: relative;
+    margin-left: auto;
+    bottom: 0;
+    top: 0;
+    border-radius: 0 15px 15px 0;
+}
+#section-right>img{
+    height: 92px;
+    width: 420px;
+    position: relative;
+    margin: auto;
+    top: 20px;
+}
+#head-text{
+    width: 250px;
+    position: relative;
+    margin: auto;
+    top: 40px;
+    font-family: "Geist Mono" ;
+    font-size: 40px;
+    font-weight: 700;
+}
+.login-form{
+    width: 400px;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.labels{
+    font-size: 20px;
+}
+#exampleInputUserName{
+    width: 400px;
+    height: 40px;
+    background: #B6FFA1;
+}
+#exampleInputPassword1{
+    width: 400px;
+    height: 40px;
+    background: #B6FFA1;
+}
+#submit-button{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    left: 150px;
+    right: 0;
+    bottom: 0;
+}
+#section-right>hr{
+    position: relative;
+    top: 130px;
+    border-top: 2px solid black;
+    width: 350px;
+    margin: auto;
+}
+#signup-text{
+    width: 300px;
+    position: relative;
+    top: 170px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 15px;
+}
