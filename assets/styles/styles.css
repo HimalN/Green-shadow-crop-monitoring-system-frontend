@@ -99,6 +99,15 @@ html body{
     right: 0;
     bottom: 0;
 }
+#head-text-signup{
+    width: 290px;
+    position: relative;
+    margin: auto;
+    top: 40px;
+    font-family: "Geist Mono" ;
+    font-size: 40px;
+    font-weight: 700;
+}
 #section-right>hr{
     position: relative;
     top: 130px;
@@ -107,6 +116,111 @@ html body{
     margin: auto;
 }
 #signup-text{
+    width: 300px;
+    position: relative;
+    top: 170px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 15px;
+}
+#signup-lock,#login-lock{
+    color: blue;
+    cursor: pointer;
+}
+#signup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1000px;
+    height: 550px;
+    background: #A0D683;
+    border-radius: 15px 15px 15px 15px;
+}
+.signup-column{
+    display: flex;
+}
+.div-left{
+    flex: 1;
+}
+.div-left>img{
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    top: 0;
+}
+#image-text-lower{
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 490px;
+    width: 350px;
+    font-family: "Geist Mono";
+    font-size: 25px;
+}
+.div-right{
+    height: 550px;
+    width: 450px;
+    background: #72BF78;
+    position: relative;
+    margin-left: auto;
+    bottom: 0;
+    top: 0;
+    border-radius: 0 15px 15px 0;
+}
+#head-text-signup{
+    width: 290px;
+    position: relative;
+    margin: auto;
+    top: 40px;
+    font-family: "Geist Mono" ;
+    font-size: 40px;
+    font-weight: 700;
+}
+.signup-form{
+    width: 400px;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#UserName{
+    width: 400px;
+    height: 40px;
+    background: #B6FFA1;
+}
+#Password1{
+    width: 400px;
+    height: 40px;
+    background: #B6FFA1;
+}
+#signup-submit-button{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    left: 150px;
+    right: 0;
+    bottom: 0;
+}
+.div-right>hr{
+    position: relative;
+    top: 130px;
+    border-top: 2px solid black;
+    width: 350px;
+    margin: auto;
+}
+#signup-text-lower{
     width: 300px;
     position: relative;
     top: 170px;
