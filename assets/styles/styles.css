@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Rakkas&display=swap');
 html body{
-    background-color:  #D3EE98;
+    background-color: #34a13b;
 }
 
 .login{
@@ -13,7 +13,7 @@ html body{
     margin: auto;
     width: 1000px;
     height: 550px;
-    background: #A0D683;
+    background: #5be165;
     border-radius: 15px 15px 15px 15px;
 }
 .login-column{
@@ -46,7 +46,7 @@ html body{
 #section-right{
     height: 550px;
     width: 450px;
-    background: #72BF78;
+    background: #FBFBDB;
     position: relative;
     margin-left: auto;
     bottom: 0;
@@ -84,12 +84,12 @@ html body{
 #exampleInputUserName{
     width: 400px;
     height: 40px;
-    background: #B6FFA1;
+    /*background: #B6FFA1;*/
 }
 #exampleInputPassword1{
     width: 400px;
     height: 40px;
-    background: #B6FFA1;
+    /*background: #B6FFA1;*/
 }
 #submit-button{
     position: relative;
@@ -138,7 +138,7 @@ html body{
     margin: auto;
     width: 1000px;
     height: 550px;
-    background: #A0D683;
+    background: #5be165;
     border-radius: 15px 15px 15px 15px;
 }
 .signup-column{
@@ -170,7 +170,7 @@ html body{
 .div-right{
     height: 550px;
     width: 450px;
-    background: #72BF78;
+    background: #FBFBDB;
     position: relative;
     margin-left: auto;
     bottom: 0;
@@ -198,12 +198,12 @@ html body{
 #UserName{
     width: 400px;
     height: 40px;
-    background: #B6FFA1;
+   /* background: #B6FFA1;*/
 }
 #Password1{
     width: 400px;
     height: 40px;
-    background: #B6FFA1;
+   /* background: #B6FFA1;*/
 }
 #signup-submit-button{
     position: relative;
@@ -221,7 +221,7 @@ html body{
     margin: auto;
 }
 #signup-text-lower{
-    width: 300px;
+    width: 250px;
     position: relative;
     top: 170px;
     left: 0;
@@ -229,4 +229,33 @@ html body{
     bottom: 0;
     margin: auto;
     font-size: 15px;
+}
+.nav{
+    background-color: #45cd50;
+}
+#navbar-image{
+    height: 40px;
+    width: 40px;
+}
+.nav-item>a{
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+.nav-link{
+    padding-right: 25px;
+}
+.nav-item>a:hover{
+    font-weight: 620;
+    color: aliceblue;
+}
+.btn-danger{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 40px;
+    width: 80px;
+
 }
