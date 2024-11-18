@@ -307,7 +307,158 @@
             </div>
         </div>
         <div class="staff" id="staff">
-            <p>bsadjbsbabdbdabsfjdbasdb;bf</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Code</label>
+                        <input type="text" class="form-control" placeholder="Ex: S0001" aria-label="Code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="Ex: Tony" aria-label="First Name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Ex: Stark" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Designation</label>
+                        <input type="text" class="form-control" placeholder="Ex: CEO" aria-label="Designation">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Gender</label>
+                        <select class="form-control" id="genderSelect" name="gender">
+                            <option value="" disabled selected>Choose Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class=" row">
+                    <div class="col-3">
+                        <label class="form-label">Joined date</label>
+                        <input type="date" class="form-control" placeholder="Joined date of the member" aria-label="Joined date">
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" placeholder="Designation of the member" aria-label="Date of Birth">
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col">
+                        <label class="form-label">Building no or name </label>
+                        <input type="text" class="form-control" placeholder="Ex: 28/D or Jayabima building" aria-label="Building no or name ">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Street or lane</label>
+                        <input type="text" class="form-control" placeholder="Ex: Rathnapura Road" aria-label="Street or lane">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Main city</label>
+                        <input type="text" class="form-control" placeholder="Ex: Diurumpitiya" aria-label="Main city">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Main state</label>
+                        <input type="text" class="form-control" placeholder="Ex: Getahaththa" aria-label="Main state">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Postal code</label>
+                        <input type="text" class="form-control" placeholder="Ex: 70620" aria-label="Postal code">
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col">
+                        <label class="form-label">Contact No.</label>
+                        <input type="text" class="form-control" placeholder="Ex: 0777XXXXXX" aria-label="Contact No.">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Email Address</label>
+                        <input type="text" class="form-control" placeholder="Ex: tony@stark.com" aria-label="Email Address">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Role</label>
+                        <input type="text" class="form-control" placeholder="Ex: CEO" aria-label="Role">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Field</label>
+                        <input type="text" class="form-control" placeholder="Ex: F0001" aria-label="Field">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Vehicle</label>
+                        <input type="text" class="form-control" placeholder="Ex: CBR-5000" aria-label="Vehicle">
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Joined date</th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col">Building no or name</th>
+                            <th scope="col">Street or lane</th>
+                            <th scope="col">Main city</th>
+                            <th scope="col">Main state</th>
+                            <th scope="col">Postal code</th>
+                            <th scope="col">Contact No.</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Field</th>
+                            <th scope="col">Vehicle</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>John</td>
+                            <td>Manager</td>
+                            <td>Male</td>
+                            <td>2020-01-15</td>
+                            <td>1985-05-20</td>
+                            <td>Building A</td>
+                            <td>Main Street</td>
+                            <td>Cityville</td>
+                            <td>Stateville</td>
+                            <td>12345</td>
+                            <td>0777123456</td>
+                            <td>john.doe@example.com</td>
+                            <td>Manager</td>
+                            <td>F0001</td>
+                            <td>Car</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Jane</td>
+                            <td>Developer</td>
+                            <td>Female</td>
+                            <td>2019-03-10</td>
+                            <td>1990-07-15</td>
+                            <td>Building B</td>
+                            <td>Second Street</td>
+                            <td>Townsville</td>
+                            <td>Regionville</td>
+                            <td>67890</td>
+                            <td>0777987654</td>
+                            <td>jane.doe@example.com</td>
+                            <td>Developer</td>
+                            <td>F0002</td>
+                            <td>Bike</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="vehicle" id="vehicle">
             <p>vsfhjsvdfhfvsfvdlbabsdcbacjb</p>
