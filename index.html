@@ -96,20 +96,215 @@
                             <a class="nav-link" id="nav-user">User</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-danger" id="logout">Logout</button>
+                            <button type="button" class="btn btn-danger logout-btn" id="logout">Logout</button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="dashboard" id="dashboard">
-            <p>qbjkbdsjkdbajsdbjb</p>
+            <div class="dashboard-cards grid-container">
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;" >
+                    <div class="card-header">Total Fields</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="totalCustomersHome">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;" >
+                    <div class="card-header">Total Crop</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="totalItemsHome">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Total Staff</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="totalOrdersHome">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Total Vehicles</div>
+                    <div class="card-body">
+                        <h5 class="card-title">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Total Equipments</div>
+                    <div class="card-body">
+                        <h5 class="card-title">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Available Equipments</div>
+                    <div class="card-body">
+                        <h5 class="card-title">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Logs</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="sales">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
+                    <div class="card-header">Total Users</div>
+                    <div class="card-body">
+                        <h5 class="card-title">0</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="field" id="field">
-            <p>njnsadnalndndklansdkndncscsjandsndk</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Code</label>
+                        <input type="text" class="textt form-control" placeholder="Ex: F0001" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Ex: Nebula" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-control" placeholder="Ex: 38.8951° latitude, -77.0364° longitude " aria-label="First name">
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label">Extent size</label>
+                        <input type="text" class="form-control" placeholder="Extent of the field (Preferred Sq. m) " aria-label="Last name">
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col">
+                        <label class="form-label">Crops</label>
+                        <input type="text" class="form-control" placeholder="Available crop types of a field " aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Staff</label>
+                        <input type="text" class="form-control" placeholder="Allocated staff to the field   " aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Image 1</label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Image 2</label>
+                        <input type="file" class="form-control" id="inputGroupFile02">
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Extent size</th>
+                            <th scope="col">Crops</th>
+                            <th scope="col">Staff</th>
+                            <th scope="col">image1</th>
+                            <th scope="col">image2</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="crop" id="crop">
-            <p>sbdfjbd;jfsb;fdbfsbfdjfsd</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Code</label>
+                        <input type="text" class="textt form-control" placeholder="Ex: C0001" aria-label="Code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Common name</label>
+                        <input type="text" class="form-control" placeholder="Ex: Corn" aria-label="Common name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Scientific name</label>
+                        <input type="text" class="form-control" placeholder="Ex: Zea mays" aria-label="Scientific name">
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col">
+                        <label class="form-label">Image</label>
+                        <input type="file" class="form-control" id="Image">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Category</label>
+                        <input type="text" class="form-control" placeholder="Ex: Cereal" aria-label="Category">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Season</label>
+                        <input type="text" class="form-control" placeholder="Ex: Spring" aria-label="Season">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Field</label>
+                        <input type="text" class="form-control" placeholder="Ex: F0001 "aria-label="Field">
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Common name</th>
+                            <th scope="col">Scientific name</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Field</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="staff" id="staff">
             <p>bsadjbsbabdbdabsfjdbasdb;bf</p>
