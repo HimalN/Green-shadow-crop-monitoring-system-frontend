@@ -461,7 +461,78 @@
             </div>
         </div>
         <div class="vehicle" id="vehicle">
-            <p>vsfhjsvdfhfvsfvdlbabsdcbacjb</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Vehicle code</label>
+                        <input type="text" class="form-control" placeholder="Ex: V0001" aria-label="Vehicle code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">License plate number </label>
+                        <input type="text" class="form-control" placeholder="Ex: LY-5495" aria-label="License plate number ">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Vehicle category </label>
+                        <input type="text" class="form-control" placeholder="Ex: Lorry" aria-label="Vehicle category ">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Fuel type </label>
+                        <select class="form-control" aria-label="Fuel type">
+                            <option value="" disabled selected>Select fuel type</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Status</label>
+                        <input type="text" class="form-control" placeholder="Need to change" aria-label="Status">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Allocated staff</label>
+                        <input type="text" class="form-control" placeholder="Ex: XXX" aria-label="Allocated staff member details">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Remarks</label>
+                        <input type="text" class="form-control" placeholder="Ex: Kawada bn" aria-label="Remarks">
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Vehicle ID</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">License Plate</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Allocated Staff</th>
+                            <th scope="col">Remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <!-- Example row data -->
+                            <td>V0001</td>
+                            <td>Scania R</td>
+                            <td>Truck</td>
+                            <td>LY-5495</td>
+                            <td>Available</td>
+                            <td>John Doe</td>
+                            <td>None</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="equipment" id="equipment">
             <div class="custom-form">
