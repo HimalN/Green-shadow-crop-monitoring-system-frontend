@@ -467,7 +467,89 @@
             <p>hvshvhvfhbcbchsbsbdbdjbdjsd</p>
         </div>
         <div class="log" id="log">
-            <p>vshvhbbdlvasjdvljvbd\bxb\dsjbdjs</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Log code</label>
+                        <input type="text" class="form-control" placeholder="Ex: L0001" aria-label="Log code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Log Date</label>
+                        <input type="text" class="form-control" id="log-date" readonly aria-label="Log Date">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Log Observation</label>
+                        <input type="text" class="form-control" placeholder="Ex: httk kawa" id="log-observe" aria-label="Log Observation">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Observered Image</label>
+                        <input type="file" class="form-control" id="ObserveredImage">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Field</label>
+                        <select class="form-control" aria-label="Field">
+                            <option value="" disabled selected>Select relevant field</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Staff</label>
+                        <select class="form-control" aria-label="Staff">
+                            <option value="" disabled selected>Select staff member</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Crop</label>
+                        <select class="form-control" aria-label="Crop">
+                            <option value="" disabled selected>Select crop member</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Equipment Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Fuel Type</th>
+                            <th scope="col">Availability</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Staff</th>
+                            <th scope="col">Field</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>E001</td>
+                            <td>Tractor</td>
+                            <td>Mechanical</td>
+                            <td>Diesel</td>
+                            <td>Available</td>
+                            <td>Operational</td>
+                            <td>John Doe</td>
+                            <td>Agriculture</td>
+                        </tr>
+                        <tr>
+                            <td>E002</td>
+                            <td>Plough</td>
+                            <td>Mechanical</td>
+                            <td>None</td>
+                            <td>Unavailable</td>
+                            <td>Under Maintenance</td>
+                            <td>Jane Smith</td>
+                            <td>Agriculture</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="user" id="user">
             <p>sjbdjsbdjbdjbxjbjbasljdblajdbjsbdd</p>
