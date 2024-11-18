@@ -464,7 +464,111 @@
             <p>vsfhjsvdfhfvsfvdlbabsdcbacjb</p>
         </div>
         <div class="equipment" id="equipment">
-            <p>hvshvhvfhbcbchsbsbdbdjbdjsd</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Equipment code</label>
+                        <input type="text" class="form-control" placeholder="Ex: V0001" aria-label="Equipment code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Ex: LY-5495" aria-label="Name">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Type</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="electrical" value="Electrical" aria-label="Electrical">
+                            <label class="form-check-label" for="electrical">
+                                Electrical
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="mechanical" value="Mechanical" aria-label="Mechanical">
+                            <label class="form-check-label" for="mechanical">
+                                Mechanical
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Availability</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="availability" id="available" value="Available" aria-label="Available">
+                            <label class="form-check-label" for="available">
+                                Available
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="availability" id="unavailable" value="Unavailable" aria-label="Unavailable">
+                            <label class="form-check-label" for="unavailable">
+                                Unavailable
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="availability" id="UnderMaintenance" value="Under Maintenance" aria-label="Under Maintenance">
+                            <label class="form-check-label" for="unavailable">
+                                Under Maintenance
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Staff</label>
+                        <select class="form-control" aria-label="Fuel type">
+                            <option value="" disabled selected>Select staff member</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Field</label>
+                        <select class="form-control" aria-label="Fuel type">
+                            <option value="" disabled selected>Select relevant field</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Equipment Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Fuel Type</th>
+                            <th scope="col">Availability</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Staff</th>
+                            <th scope="col">Field</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>E001</td>
+                            <td>Tractor</td>
+                            <td>Mechanical</td>
+                            <td>Diesel</td>
+                            <td>Available</td>
+                            <td>Operational</td>
+                            <td>John Doe</td>
+                            <td>Agriculture</td>
+                        </tr>
+                        <tr>
+                            <td>E002</td>
+                            <td>Plough</td>
+                            <td>Mechanical</td>
+                            <td>None</td>
+                            <td>Unavailable</td>
+                            <td>Under Maintenance</td>
+                            <td>Jane Smith</td>
+                            <td>Agriculture</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="log" id="log">
             <div class="custom-form">
@@ -552,7 +656,78 @@
             </div>
         </div>
         <div class="user" id="user">
-            <p>sjbdjsbdjbdjbxjbjbasljdblajdbjsbdd</p>
+            <div class="custom-form">
+                <div class=" row">
+                    <div class="col-2">
+                        <label class="form-label">Vehicle code</label>
+                        <input type="text" class="form-control" placeholder="Ex: V0001" aria-label="Vehicle code">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">License plate number </label>
+                        <input type="text" class="form-control" placeholder="Ex: LY-5495" aria-label="License plate number ">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Vehicle category </label>
+                        <input type="text" class="form-control" placeholder="Ex: Lorry" aria-label="Vehicle category ">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Fuel type </label>
+                        <select class="form-control" aria-label="Fuel type">
+                            <option value="" disabled selected>Select fuel type</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Status</label>
+                        <input type="text" class="form-control" placeholder="Need to change" aria-label="Status">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Allocated staff</label>
+                        <input type="text" class="form-control" placeholder="Ex: XXX" aria-label="Allocated staff member details">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Remarks</label>
+                        <input type="text" class="form-control" placeholder="Ex: Kawada bn" aria-label="Remarks">
+                    </div>
+                </div>
+                <div class="custom-button">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="custom-table table-responsive p-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Vehicle ID</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">License Plate</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Allocated Staff</th>
+                            <th scope="col">Remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <!-- Example row data -->
+                            <td>V0001</td>
+                            <td>Scania R</td>
+                            <td>Truck</td>
+                            <td>LY-5495</td>
+                            <td>Available</td>
+                            <td>John Doe</td>
+                            <td>None</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
