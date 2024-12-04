@@ -251,4 +251,18 @@ $(document).ready(function (){
         }
     });
 
+    $('#clear-field-button').on('click', () => {
+        clearFields();
+    });
+
+    function clearFields() {
+        $('#fieldCode').val('');
+        $('#fieldName').val('');
+        $('#fieldLocation').val('');
+        $('#fieldSize').val('');
+        $('#inputGroupFile01').val('');
+        $('#inputGroupFile02').val('');
+    }
+
+
 })
