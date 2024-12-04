@@ -254,7 +254,6 @@ $(document).ready(function () {
             var cropCategory = $("#cropCategory").val();
             var cropSeason = $("#cropSeason").val();
             var fieldCode = $("#cropFieldSelectID option:selected").text();
-            console.log(fieldCode)
 
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/crop/"+cropCode,
@@ -309,6 +308,102 @@ $(document).ready(function () {
             console.log("Crop Season:", cropSeason);
         }
     });
+
+    $("#delete-crop-btn").click(function () {
+        var cropCode = $("#cropCode").val();
+
+        if (!cropCode) {
+            alert("Please enter a field code to delete.");
+            return;
+        }
+
+        var settings = {
+            "url": "http://localhost:8081/green-shadow/api/v1/crop/"+cropCode,
+            "method": "DELETE",
+            "timeout": 0,
+        };
+
+        $.ajax(settings)
+            .done(function (response) {
+                alert("Crop deleted successfully!");
+                console.log("Response Data:", response);
+                // Optionally refresh the table or UI
+                loadTableCrop(); // Call your function to reload the table
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Error:", textStatus, errorThrown);
+                alert("Failed to delete the crop. Please try again.");
+            });
+
+    });
+
+    $("#update-crop-btn").click(function () {
+        validateCropCode()
+        validateCommonName()
+        validateScientificName()
+        validateImage()
+        validateCategory()
+        validateSeason()
+        validateFieldCode()
+        if (codeCropError === true && commonNameError === true && scientificNameError === true && imageError === true && categoryError === true && seasonError === true && codeFieldError === true) {
+            var cropCode = $("#cropCode").val();
+            var cropCommonName = $("#cropCommonName").val();
+            var cropScientificName = $("#cropScientificName").val();
+            var cropImage = $("#cropImage").prop('files')[0];
+            var cropCategory = $("#cropCategory").val();
+            var cropSeason = $("#cropSeason").val();
+            var fieldCode = $("#cropFieldSelectID option:selected").text();
+
+
+            $.ajax({
+                url: "http://localhost:8081/green-shadow/api/v1/crop/"+cropCode,
+                type: "GET",
+                headers: {"Content-Type": "application/json"},
+                success: (res) => {
+
+                    if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
+                        alert("Crop does not exist");
+                    } else {
+                        var form = new FormData();
+                        form.append("cropCode", cropCode);
+                        form.append("cropName", cropCommonName);
+                        form.append("cropScientificName", cropScientificName);
+                        form.append("cropCategory", cropCategory);
+                        form.append("cropSeason", cropSeason);
+                        form.append("fieldCode", fieldCode);
+
+                        if (cropImage) {
+                            form.append("cropImage", cropImage, cropImage.name);
+                        }
+
+                        var settings = {
+                            "url": "http://localhost:8081/green-shadow/api/v1/crop",
+                            "method": "POST",
+                            "timeout": 0,
+                            "processData": false,
+                            "mimeType": "multipart/form-data",
+                            "contentType": false,
+                            "data": form
+                        };
+
+                        $.ajax(settings).done(function (response) {
+                            loadTableCrop();
+                            alert("Successfully added the crop!");
+                            console.log("Response:", response);
+                        }).fail(function (error) {
+                            alert("Failed to add the crop!");
+                            console.error("Error:", error);
+                        });
+                    }
+                },
+                error: (res) => {
+                    console.error(res);
+                }
+            });
+        }
+
+    });
+
     $('#clear-crop-btn').on('click', () => {
         clearFields();
     });
@@ -319,6 +414,6 @@ $(document).ready(function () {
         $('#cropScientificName').val("");
         $('#cropCategory').val("");
         $('#cropSeason').val("");
-        $('#cropFieldSelectID').val("");
+        updateFieldIDs();
     }
 })
