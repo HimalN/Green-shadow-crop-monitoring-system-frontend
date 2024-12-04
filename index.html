@@ -222,41 +222,44 @@
                 <div class=" row">
                     <div class="col-2">
                         <label class="form-label">Code</label>
-                        <input type="text" class="textt form-control" placeholder="Ex: C0001" aria-label="Code">
+                        <input id="cropCode" type="text" class="textt form-control" placeholder="Ex: C0001" aria-label="Code">
                     </div>
                     <div class="col">
                         <label class="form-label">Common name</label>
-                        <input type="text" class="form-control" placeholder="Ex: Corn" aria-label="Common name">
+                        <input id="cropCommonName" type="text" class="form-control" placeholder="Ex: Corn" aria-label="Common name">
                     </div>
                     <div class="col">
                         <label class="form-label">Scientific name</label>
-                        <input type="text" class="form-control" placeholder="Ex: Zea mays" aria-label="Scientific name">
+                        <input id="cropScientificName" type="text" class="form-control" placeholder="Ex: Zea mays" aria-label="Scientific name">
                     </div>
                 </div>
                 <div class=" row">
                     <div class="col">
                         <label class="form-label">Image</label>
-                        <input type="file" class="form-control" id="Image">
+                        <input type="file" class="form-control" id="cropImage">
                     </div>
                     <div class="col">
                         <label class="form-label">Category</label>
-                        <input type="text" class="form-control" placeholder="Ex: Cereal" aria-label="Category">
+                        <input id="cropCategory" type="text" class="form-control" placeholder="Ex: Cereal" aria-label="Category">
                     </div>
                     <div class="col">
                         <label class="form-label">Season</label>
-                        <input type="text" class="form-control" placeholder="Ex: Spring" aria-label="Season">
+                        <input id="cropSeason" type="text" class="form-control" placeholder="Ex: Spring" aria-label="Season">
                     </div>
                     <div class="col">
                         <label class="form-label">Field</label>
-                        <input type="text" class="form-control" placeholder="Ex: F0001 "aria-label="Field">
+                        <select class="form-select" id="cropFieldSelectID" required>
+                            <option selected disabled value=""></option>
+                        </select>
+                        <label id="fieldCodeCheck" style="color: red;"></label>
                     </div>
                 </div>
                 <div class="custom-button">
-                    <button type="button" class="btn btn-primary">Search</button>
-                    <button type="button" class="btn btn-success">Add</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-info">Clear</button>
+                    <button id="search-crop-btn" type="button" class="btn btn-primary">Search</button>
+                    <button id="add-crop-btn" type="button" class="btn btn-success">Add</button>
+                    <button id="delete-crop-btn" type="button" class="btn btn-danger">Delete</button>
+                    <button id="update-crop-btn" type="button" class="btn btn-warning">Update</button>
+                    <button id="clear-crop-btn" type="button" class="btn btn-info">Clear</button>
                 </div>
                 <div class="custom-table table-responsive p-3">
                     <table class="table">
@@ -271,16 +274,7 @@
                             <th scope="col">Field</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr>
+                        <tbody id="crop-table">
                         </tbody>
                     </table>
                 </div>
@@ -784,6 +778,7 @@
 
     <script src="assets/lib/jquery-3.7.1.min.js"></script>
     <script type="module" src="assets/controller/FieldController.js"></script>
+    <script type="module" src="assets/controller/CropController.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
