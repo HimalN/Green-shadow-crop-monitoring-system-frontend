@@ -452,7 +452,7 @@ $(document).ready(function () {
         $("#staffFirstName").val(staffFirstName);
         $("#staffLastName").val(staffLastName);
         $("#staffDesignation").val(staffDesignation);
-        $("#staffGenderSelect").val(staffGenderSelect);
+        $("#staffGenderSelect").text(staffGenderSelect);
         $("#staffJoinedDate").val(staffJoinedDate);
         $("#staffDOB").val(staffDOB);
         $("#staffBuildingNo").val(staffBuildingNo);
@@ -520,6 +520,7 @@ $(document).ready(function () {
             var staffRole = $("#staffRoleSelect option:selected").text();
             var staffField = $("#staffFieldSelectID option:selected").text();
 
+
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
                 type: "GET",
@@ -555,7 +556,7 @@ $(document).ready(function () {
                         };
 
                         $.ajax(settings).done(function (response) {
-                            loadTableCrop();
+                            loadTableStaff();
                             alert("Successfully added the staff!");
                             console.log("Response:", response);
                         }).fail(function (error) {
@@ -576,6 +577,7 @@ $(document).ready(function () {
             console.log("Staff First Name:", staffFirstName);
             console.log("Staff Last Name:", staffLastName);
             console.log("Staff Designation:", staffDesignation);
+            console.log("Staff Gender:", staffGender);
             console.log("Staff joined data: ", staffJoinedDate);
             console.log("Staff DOB:", staffDOB);
             console.log("Staff Building No:", staffBuildingNo);
@@ -590,4 +592,150 @@ $(document).ready(function () {
 
         }
     });
+
+    $("#delete-staff-btn").click(function () {
+        var staffCode = $("#staffCode").val();
+
+        if (!staffCode) {
+            alert("Please enter a field code to delete.");
+            return;
+        }
+
+        var settings = {
+            "url": "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
+            "method": "DELETE",
+            "timeout": 0,
+        };
+
+        $.ajax(settings)
+            .done(function (response) {
+                alert("staff deleted successfully!");
+                console.log("Response Data:", response);
+                // Optionally refresh the table or UI
+                loadTableStaff(); // Call your function to reload the table
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Error:", textStatus, errorThrown);
+                alert("Failed to delete the staff. Please try again.");
+            });
+
+    });
+
+    $("#update-staff-btn").click(function () {
+        validateStaffCode()
+        validateStaffFirstName()
+        validateStaffLastName()
+        validateStaffDesignation()
+        validateStaffGender()
+        validateStaffJoinedDate()
+        validateStaffDOB()
+        validateStaffBuildingNo()
+        validateStaffStreet()
+        validateStaffCity()
+        validateStaffState()
+        validateStaffPostal()
+        validateStaffMobile()
+        validateStaffEmail()
+        validateStaffRole()
+        validateStaffField()
+        if (staffCodeError === true && staffFirstNameError === true && staffLastNameError === true && staffDesignationError === true && staffGenderError === true && staffJoinedDateError === true && staffDOBError === true && staffBuildingNoError === true && staffStreetError === true && staffCityError === true && staffStateError === true && staffPostalError === true && staffMobileError === true && staffEmailError === true && staffRoleError === true && staffFieldError === true) {
+            var staffCode = $("#staffCode").val();
+            var staffFirstName = $("#staffFirstName").val();
+            var staffLastName = $("#staffLastName").val();
+            var staffDesignation = $("#staffDesignation").val();
+            var staffGender = $("#staffGenderSelect option:selected").text();
+            var staffJoinedDate = $("#staffJoinedDate").val();
+            var staffDOB = $("#staffDOB").val();
+            var staffBuildingNo = $("#staffBuildingNo").val();
+            var staffStreet = $("#staffStreet").val();
+            var staffCity = $("#staffCity").val();
+            var staffState = $("#staffState").val();
+            var staffPostal = $("#staffPostal").val();
+            var staffMobile = $("#staffMobile").val();
+            var staffEmail = $("#staffEmail").val();
+            var staffRole = $("#staffRoleSelect option:selected").text();
+            var staffField = $("#staffFieldSelectID option:selected").text();
+
+
+            $.ajax({
+                url: "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
+                type: "GET",
+                headers: { "Content-Type": "application/json" },
+                success: (res) => {
+
+                    if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
+                        alert("Staff does not exist");
+                    } else {
+                        var form = new FormData();
+                        form.append("staffId", staffCode);
+                        form.append("firstName", staffFirstName);
+                        form.append("lastName", staffLastName);
+                        form.append("designation", staffDesignation);
+                        form.append("gender", staffGender);
+                        form.append("joinedDate", staffJoinedDate);
+                        form.append("dob", staffDOB);
+                        form.append("addressLine1", staffBuildingNo);
+                        form.append("addressLine2", staffStreet);
+                        form.append("addressLine3", staffCity);
+                        form.append("addressLine4", staffState);
+                        form.append("addressLine5", staffPostal);
+                        form.append("contactNo", staffMobile);
+                        form.append("email", staffEmail);
+                        form.append("role", staffRole);
+                        form.append("fieldCode", staffField);
+
+
+                        var settings = {
+                            "url": "http://localhost:8081/green-shadow/api/v1/staff",
+                            "method": "POST",
+                            "timeout": 0,
+                            "processData": false,
+                            "mimeType": "multipart/form-data",
+                            "contentType": false,
+                            "data": form
+                        };
+
+                        $.ajax(settings).done(function (response) {
+                            loadTableStaff();
+                            alert("Successfully updated the staff!");
+                            console.log("Response:", response);
+                        }).fail(function (error) {
+                            alert("Failed to update the staff!");
+                            console.error("Error:", error);
+                        });
+                    }
+                },
+                error: (res) => {
+                    console.error(res);
+                }
+            });
+        }
+
+    });
+
+
+
+
+    $('#clear-staff-btn').on('click', () => {
+        clearFields();
+    });
+
+    function clearFields() {
+        $("#staffCode").val("");
+        $("#staffFirstName").val("");
+        $("#staffLastName").val("");
+        $("#staffDesignation").val("");
+        $("#staffGenderSelect").val("");
+        $("#staffJoinedDate").val("");
+        $("#staffDOB").val("");
+        $("#staffBuildingNo").val("");
+        $("#staffStreet").val("");
+        $("#staffCity").val("");
+        $("#staffState").val("");
+        $("#staffPostal").val("");
+        $("#staffMobile").val("");
+        $("#staffEmail").val("");
+        $("#staffRoleSelect").val("");
+        $("#staffFieldSelectID").val("");
+    }
 })
