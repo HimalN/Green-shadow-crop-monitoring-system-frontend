@@ -26,7 +26,7 @@ $(document).ready(function () {
         console.log("Loading table...");
 
         $.ajax({
-            url: "http://localhost:4010/green-shadow/api/v1/staff",
+            url: "http://localhost:8081/green-shadow/api/v1/staff",
             method: "GET",
             success: function (results) {
                 $('#staff-table').empty();
@@ -484,6 +484,7 @@ $(document).ready(function () {
         console.log("Staff Role Select:", staffRoleSelect);
         console.log("Staff Field Select ID:", staffFieldSelectID);
     });
+
     $("#add-staff-btn").click(function () {
         validateStaffCode()
         validateStaffFirstName()
@@ -542,7 +543,6 @@ $(document).ready(function () {
                         form.append("email", staffEmail);
                         form.append("role", staffRole);
                         form.append("fieldCode", staffField);
-
 
                         var settings = {
                             "url": "http://localhost:8081/green-shadow/api/v1/staff",
