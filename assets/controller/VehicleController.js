@@ -53,7 +53,7 @@ function getCookie(cname) {
 
                     $('#vehicle-table').append(record);
                 });
-                $('#vehicleCount').text(results.length);
+                $('#totalVehicles').text(results.length);
             },
             error: function (error) {
                 console.log(error);

@@ -39,6 +39,8 @@ export function loadTableLog() {
         },
         success: function (results) {
             $('#log-table').empty();
+            var logCount = results.length();
+            console.log(logCount);
             results.forEach(function (post) {
                 var record = `<tr>
                                     <td>${post.logCode}</td>     
@@ -54,7 +56,7 @@ export function loadTableLog() {
 
                 $('#log-table').append(record);
             });
-            $('#logCount').text(results.length);
+            $('#totalLogs').text(results.length);
         },
         error: function (error) {
             console.log(error);

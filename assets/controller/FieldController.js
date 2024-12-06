@@ -49,7 +49,7 @@
                                 </tr>`;
                     $('#field-table').append(record);
                 });
-                $('#FieldCount').text(results.length);
+                $('#totalFields').text(results.length);
             },
             error: function (error) {
                 console.log(error);

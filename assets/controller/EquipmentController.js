@@ -50,7 +50,7 @@
 
                     $('#equipment-table').append(record);
                 });
-                $('#equipmentCount').text(results.length);
+                $('#totalEquipment').text(results.length);
             },
             error: function (error) {
                 console.log(error);

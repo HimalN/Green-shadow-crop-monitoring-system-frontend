@@ -51,7 +51,7 @@ function getCookie(cname) {
 
                     $('#crop-table').append(record);
                 });
-                $('#cropCount').text(results.length);
+                $('#totalCrop').text(results.length);
             },
             error: function (error) {
                 console.log(error);

@@ -69,7 +69,7 @@ function getCookie(cname) {
 
                     $('#staff-table').append(record);
                 });
-                $('#staffCount').text(results.length);
+                $('#totalStaff').text(results.length);
             },
             error: function (error) {
                 console.log(error);
