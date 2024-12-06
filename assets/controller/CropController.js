@@ -16,6 +16,9 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/crop",
             method: "GET",
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             success: function (results) {
                 $('#crop-table').empty();
                 results.forEach(function (post) {
@@ -218,7 +221,10 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/fields",
             type: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${getCookie('token')}`
+            },
             success: (res) => {
                 // Assuming `res` is an array of customer objects
                 res.forEach(field => {
@@ -258,7 +264,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/crop/"+cropCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
                         var form = new FormData();
@@ -321,6 +327,9 @@ $(document).ready(function () {
             "url": "http://localhost:8081/green-shadow/api/v1/crop/"+cropCode,
             "method": "DELETE",
             "timeout": 0,
+            "headers": {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
         };
 
         $.ajax(settings)

@@ -19,14 +19,14 @@
                 <h2 id="head-text">User Login</h2>
                 <form class="login-form">
                     <div class="mb-3">
-                        <label for="exampleInputUserName" class="form-label, labels">User Name</label>
-                        <input type="email" class="form-control" id="exampleInputUserName" aria-describedby="userNameHelp" placeholder = 'Enter Your User Name'>
+                        <label for="login-email" class="form-label, labels">User Name</label>
+                        <input type="email" class="form-control" id="login-email" aria-describedby="userNameHelp" placeholder = 'Enter Your User Name'>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label, labels">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder = 'Enter Your password'>
+                        <label for="login-password" class="form-label, labels">Password</label>
+                        <input type="password" class="form-control" id="login-password" placeholder = 'Enter Your password'>
                     </div>
-                    <button type="button" class="btn btn-primary" id="submit-button" >Submit</button>
+                    <button type="button" class="btn btn-primary" id="login-submit-btn" >Submit</button>
 
                 </form>
                 <hr>
@@ -45,17 +45,31 @@
                 <h2 id="head-text-signup">User Sign Up</h2>
                 <form class="signup-form">
                     <div class="mb-3">
-                        <label for="UserName" class="form-label, labels">User Name</label>
-                        <input type="email" class="form-control" id="UserName" aria-describedby="userNameHelp" placeholder="Enter Your User Name">
+                        <label class="form-label">Role</label>
+                        <select class="form-control" aria-label="Role" id="registerStaffRoleSelect">
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="SCIENTIST">SCIENTIST</option>
+                            <option value="MANAGER">MANAGER</option>
+                            <option value="OTHER">OTHER</option>
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Password1" class="form-label, labels">Password</label>
-                        <input type="password" class="form-control" id="Password1" placeholder = 'Enter Your password'>
+                        <label for="register-email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="register-email" placeholder="Enter your email">
                     </div>
-                    <button type="button" class="btn btn-primary" id="signup-submit-button">Submit</button>
+                    <div class="mb-3">
+                        <label for="register-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="register-password" placeholder="Enter your password">
+                    </div>
+                    <div class="d-grid mb-3">
+                        <span id="register-submit-btn" type="submit" class="btn btn-primary">Register</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="mb-0" id="signup-text-lower">Already have an account? <a id="signin-link" href="">Sign in</a></p>
+                    </div>
                 </form>
                 <hr>
-                <p id="signup-text-lower">If you already an account <span id="login-lock">Login</span> here.</p>
             </div>
         </div>
     </section>
@@ -708,12 +722,13 @@
     </section>
 
     <script src="assets/lib/jquery-3.7.1.min.js"></script>
-    <script type="module" src="assets/controller/FieldController.js"></script>
-    <script type="module" src="assets/controller/CropController.js"></script>
-    <script type="module" src="assets/controller/StaffController.js"></script>
-    <script type="module" src="assets/controller/VehicleController.js"></script>
-    <script type="module" src="assets/controller/LogController.js"></script>
-    <script type="module" src="assets/controller/EquipmentController.js"></script>
+<!--    <script type="module" src="assets/controller/FieldController.js"></script>-->
+<!--    <script type="module" src="assets/controller/CropController.js"></script>-->
+<!--    <script type="module" src="assets/controller/StaffController.js"></script>-->
+<!--    <script type="module" src="assets/controller/VehicleController.js"></script>-->
+<!--    <script type="module" src="assets/controller/LogController.js"></script>-->
+<!--    <script type="module" src="assets/controller/EquipmentController.js"></script>-->
+<!--    <script type="module" src="assets/controller/AuthController.js"></script>-->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
