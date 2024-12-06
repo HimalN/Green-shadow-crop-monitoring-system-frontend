@@ -1,7 +1,7 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     var recordIndex = undefined;
 
-    loadTableStaff()
+    // loadTableStaff()
 
     let staffCodeError = true;
     let staffFirstNameError = true;
@@ -20,14 +20,31 @@ $(document).ready(function () {
     let staffRoleError = true;
     let staffFieldError = true;
 
-
-    function loadTableStaff() {
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+    export function loadTableStaff() {
         $('#staff-table').empty();
         console.log("Loading table...");
 
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/staff",
             method: "GET",
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             success: function (results) {
                 $('#staff-table').empty();
                 results.forEach(function (post) {
@@ -404,7 +421,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/fields",
             type: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}` },
             success: (res) => {
                 // Assuming `res` is an array of customer objects
                 res.forEach(field => {
@@ -524,7 +541,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
                 type: "GET",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json" , 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
                         var form = new FormData();
@@ -551,6 +568,9 @@ $(document).ready(function () {
                             "timeout": 0,
                             "processData": false,
                             "mimeType": "multipart/form-data",
+                            "headers": {
+                                'Authorization': `Bearer ${getCookie('token')}`,
+                            },
                             "contentType": false,
                             "data": form
                         };
@@ -605,6 +625,9 @@ $(document).ready(function () {
             "url": "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
             "method": "DELETE",
             "timeout": 0,
+            "headers": {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
         };
 
         $.ajax(settings)
@@ -660,7 +683,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/staff/" + staffCode,
                 type: "GET",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}` },
                 success: (res) => {
 
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
@@ -692,7 +715,10 @@ $(document).ready(function () {
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                'Authorization': `Bearer ${getCookie('token')}`,
+                            },
                         };
 
                         $.ajax(settings).done(function (response) {
@@ -738,4 +764,4 @@ $(document).ready(function () {
         $("#staffRoleSelect").val("");
         $("#staffFieldSelectID").val("");
     }
-})
+// })

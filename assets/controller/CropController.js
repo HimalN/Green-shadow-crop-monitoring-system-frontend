@@ -1,6 +1,6 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     var recordIndex = undefined;
-    loadTableCrop()
+    // loadTableCrop()
 
     let codeCropError = true;
     let commonNameError = true;
@@ -10,9 +10,24 @@ $(document).ready(function () {
     let seasonError = true;
     let codeFieldError = true;
 
-    function loadTableCrop() {
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+    export function loadTableCrop() {
         $('#crop-table').empty();
-        console.log("Loading table...");
+        console.log("Loading Crop table...");
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/crop",
             method: "GET",
@@ -425,4 +440,4 @@ $(document).ready(function () {
         $('#cropSeason').val("");
         updateFieldIDs();
     }
-})
+// })

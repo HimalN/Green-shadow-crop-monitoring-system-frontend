@@ -1,6 +1,6 @@
-$(document).ready(function (){
+// $(document).ready(function (){
     var recordIndex = undefined;
-    loadTableField()
+    // loadTableField()
     let codeError = true;
     let nameError = true;
     let locationError = true;
@@ -8,11 +8,30 @@ $(document).ready(function (){
     let image1Error = true;
     let image2Error = true;
 
-    function loadTableField() {
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    export function loadTableField() {
         $('#field-table').empty();
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/fields",
             method: "GET",
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             success: function (results) {
                 $('#Field-table').empty();
                 results.forEach(function (post) {
@@ -178,7 +197,6 @@ $(document).ready(function (){
     });
 
     $("#add-field-button").click(function () {
-        console.log("hiiiii")
         validateCode()
         validateName()
         validateLocation()
@@ -198,7 +216,10 @@ $(document).ready(function (){
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/fields/"+fieldCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${getCookie('token')}`
+                },
                 success: (res) => {
 
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
@@ -222,7 +243,10 @@ $(document).ready(function (){
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                "Authorization": `Bearer ${getCookie('token')}`
+                            },
                         };
                         $.ajax(settings).done(function (response) {
                             loadTableField();
@@ -263,6 +287,9 @@ $(document).ready(function (){
             "url": "http://localhost:8081/green-shadow/api/v1/fields/"+fieldCode,
             "method": "DELETE",
             "timeout": 0,
+            "headers": {
+                "Authorization": `Bearer ${getCookie('token')}`
+            },
         };
 
         $.ajax(settings)
@@ -300,7 +327,10 @@ $(document).ready(function (){
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/fields/"+fieldCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${getCookie('token')}`
+                },
                 success: (res) => {
 
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
@@ -327,7 +357,10 @@ $(document).ready(function (){
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                "Authorization": `Bearer ${getCookie('token')}`
+                            },
                         };
 
                         // Making the AJAX call
@@ -372,4 +405,4 @@ $(document).ready(function (){
     }
 
 
-})
+// })

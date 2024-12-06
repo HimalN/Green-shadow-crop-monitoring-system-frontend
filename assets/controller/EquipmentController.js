@@ -1,7 +1,7 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     var recordIndex = undefined;
 
-    loadTableEquipment()
+    // loadTableEquipment()
 
     let equipmentCodeError = true;
     let equipmentNameError = true;
@@ -10,13 +10,31 @@ $(document).ready(function () {
     let equipmentStaffError = true;
     let equipmentFieldError = true;
 
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
-    function loadTableEquipment() {
+    export function loadTableEquipment() {
         $('#equipment-table').empty();
         console.log("Loading table...");
 
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/equipments",
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             method: "GET",
             success: function (results) {
                 $('#equipment-table').empty();
@@ -180,7 +198,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/staff",
             type: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}` },
             success: (res) => {
                 // Assuming `res` is an array of customer objects
                 res.forEach(staff => {
@@ -212,7 +230,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/fields",
             type: "GET",
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
             success: (res) => {
                 // Assuming `res` is an array of customer objects
                 res.forEach(field => {
@@ -313,7 +331,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/equipments/"+equipmentCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
                         var form = new FormData();
@@ -377,6 +395,9 @@ $(document).ready(function () {
             "url": "http://localhost:8081/green-shadow/api/v1/equipments/"+equipmentCode,
             "method": "DELETE",
             "timeout": 0,
+            "headers": {
+                "Authorization": `Bearer ${getCookie('token')}`
+            }
         };
 
         $.ajax(settings)
@@ -414,7 +435,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/equipments/"+equipmentCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
 
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
@@ -436,6 +457,9 @@ $(document).ready(function () {
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
+                            "headers": {
+                                "Authorization": `Bearer ${getCookie('token')}`
+                            },
                             "data": form
                         };
 
@@ -470,10 +494,4 @@ $(document).ready(function () {
         $('#equipmentStaffSelectID').val("");
         $('#equipmentFieldSelectID').val("");
     }
-
-
-
-
-
-
-})
+    // })

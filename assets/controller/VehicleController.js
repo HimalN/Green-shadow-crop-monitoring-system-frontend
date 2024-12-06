@@ -1,7 +1,7 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     var recordIndex = undefined;
 
-    loadTableVehicle()
+    // loadTableVehicle()
 
     let vehicleCodeError = true;
     let licenseNumberError = true;
@@ -11,13 +11,33 @@ $(document).ready(function () {
     let vehicleStaffError = true;
     let vehicleRemarksError = true;
 
-    function loadTableVehicle() {
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+    export function loadTableVehicle() {
         $('#vehicle-table').empty();
         console.log("Loading table...");
 
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/vehicle",
             method: "GET",
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             success: function (results) {
                 $('#vehicle-table').empty();
                 results.forEach(function (post) {
@@ -201,7 +221,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8081/green-shadow/api/v1/staff",
             type: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json" , 'Authorization': `Bearer ${getCookie('token')}`},
             success: (res) => {
                 // Assuming `res` is an array of customer objects
                 res.forEach(staff => {
@@ -275,7 +295,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/vehicle/"+vehicleCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
                         var form = new FormData();
@@ -294,7 +314,10 @@ $(document).ready(function () {
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                'Authorization': `Bearer ${getCookie('token')}`,
+                            },
                         };
 
                         $.ajax(settings).done(function (response) {
@@ -337,8 +360,11 @@ $(document).ready(function () {
         }
 
         var settings = {
-            "url": "http://localhost:4010/green-shadow/api/v1/vehicle/"+vehicleCode,
+            "url": "http://localhost:8081/green-shadow/api/v1/vehicle/"+vehicleCode,
             "method": "DELETE",
+            "headers": {
+                'Authorization': `Bearer ${getCookie('token')}`,
+            },
             "timeout": 0,
         };
 
@@ -377,7 +403,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://localhost:8081/green-shadow/api/v1/vehicle/"+vehicleCode,
                 type: "GET",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${getCookie('token')}`},
                 success: (res) => {
 
                     if (res && JSON.stringify(res).toLowerCase().includes("not found")) {
@@ -399,7 +425,10 @@ $(document).ready(function () {
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                'Authorization': `Bearer ${getCookie('token')}`,
+                            },
                         };
 
                         $.ajax(settings).done(function (response) {
@@ -433,5 +462,5 @@ $(document).ready(function () {
         $('#vehicleStaffSelectID option:selected').text("");
         $('#vehicleRemarks').val("");
     }
-})
+// })
 

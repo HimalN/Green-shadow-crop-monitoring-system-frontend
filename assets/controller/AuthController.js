@@ -39,6 +39,7 @@ import { loadTableStaff } from "./StaffController.js";
                 if (token) {
                     document.cookie = "token= "+token;
                     console.log("Token received: ", token);
+                    alert("Login Success !!");
                     
                     loadTableField()
                     loadTableCrop()
@@ -47,17 +48,17 @@ import { loadTableStaff } from "./StaffController.js";
                     loadTableLog()
                     loadTableStaff()
 
-                    $("#navigation").css({ display: "block" });
-                    $("#login_page").css({ display: "none" });
-                    $("#register_page").css({ display: "none" });
-                    $("#dashboard_page").css({ display: "block" });
-                    $("#staff_page").css({ display: "none" });
-                    $("#field_page").css({ display: "none" });
-                    $("#crop_page").css({ display: "none" });
-                    $("#vehicle_page").css({ display: "none" });
-                    $("#equipment_page").css({ display: "none" });
-                    $("#log_page").css({ display: "none" });
-                    $("#user_page").css({ display: "none" });
+                    $("#navbar").css({ display: "block" });
+                    $("#login").css({ display: "none" });
+                    $("#signup").css({ display: "none" });
+                    $("#dashboard").css({ display: "block" });
+                    $("#staff").css({ display: "none" });
+                    $("#fielde").css({ display: "none" });
+                    $("#crop").css({ display: "none" });
+                    $("#vehicle").css({ display: "none" });
+                    $("#equipment").css({ display: "none" });
+                    $("#log").css({ display: "none" });
+                    $("#user").css({ display: "none" });
                     
                 } else {
                     alert("Login successful, but token not received.");

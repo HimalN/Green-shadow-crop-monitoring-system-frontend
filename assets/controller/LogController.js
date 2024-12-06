@@ -403,7 +403,7 @@ $("#add-log-btn").click(function () {
                     }
 
                     var settings = {
-                        "url": "http://localhost:4010/green-shadow/api/v1/log",
+                        "url": "http://localhost:8081/green-shadow/api/v1/log",
                         "method": "POST",
                         "timeout": 0,
                         "processData": false,
