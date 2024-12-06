@@ -350,7 +350,10 @@
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
-                            "data": form
+                            "data": form,
+                            "headers": {
+                                'Authorization': `Bearer ${getCookie('token')}`
+                            }
                         };
 
                         $.ajax(settings).done(function (response) {

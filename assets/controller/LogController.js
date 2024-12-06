@@ -39,8 +39,6 @@ export function loadTableLog() {
         },
         success: function (results) {
             $('#log-table').empty();
-            var logCount = results.length();
-            console.log(logCount);
             results.forEach(function (post) {
                 var record = `<tr>
                                     <td>${post.logCode}</td>     

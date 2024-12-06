@@ -298,6 +298,9 @@ function getCookie(cname) {
                             "url": "http://localhost:8081/green-shadow/api/v1/crop",
                             "method": "POST",
                             "timeout": 0,
+                            "headers": {
+                                "Authorization": `Bearer ${getCookie('token')}`,
+                            },
                             "processData": false,
                             "mimeType": "multipart/form-data",
                             "contentType": false,
@@ -313,6 +316,7 @@ function getCookie(cname) {
                             console.error("Error:", error);
                         });
                     } else{
+                        alert("Crop already exists");
                         console.log("Crop already exists");
                     }
                 },
