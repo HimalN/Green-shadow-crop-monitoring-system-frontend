@@ -106,6 +106,8 @@ import { loadTableStaff } from "./StaffController.js";
                 if (token) {
                     localStorage.setItem("jwtToken", token);
                     console.log("Token received: ", token);
+                    alert("Register Success !!");
+
                 } else {
                     alert("Signup successful, token not recieved.");
                 }

@@ -106,9 +106,9 @@
                         <li class="nav-item">
                             <a class="nav-link" id="nav-log">Log</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-user">User</a>
-                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" id="nav-user">User</a>-->
+<!--                        </li>-->
                         <li class="nav-item">
                             <button type="button" class="btn btn-danger logout-btn" id="logout">Logout</button>
                         </li>
@@ -156,7 +156,7 @@
                 <div class="card text-bg-success mb-3 item" style="max-width: 18rem;">
                     <div class="card-header">Available Equipments</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 class="card-title" id="totalEquipments1">0</h5>
                         <p class="card-text"></p>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Name</label>
-                        <input id="fieldName" type="text" class="form-control" placeholder="Ex: Nebula" aria-label="Last name">
+                        <input id="fieldName" type="text" class="form-control" placeholder="DBC" aria-label="Last name">
                     </div>
                     <div class="col">
                         <label class="form-label">Location</label>
@@ -193,7 +193,7 @@
                     </div>
                     <div class="col-3">
                         <label class="form-label">Extent size</label>
-                        <input id="fieldSize" type="text" class="form-control" placeholder="Extent of the field (Preferred Sq. m) " aria-label="Last name">
+                        <input id="fieldSize" type="text" class="form-control" placeholder="Extent of the field" aria-label="Last name">
                     </div>
                 </div>
                 <div class=" row">
@@ -244,7 +244,7 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Scientific name</label>
-                        <input id="cropScientificName" type="text" class="form-control" placeholder="Ex: Zea mays" aria-label="Scientific name">
+                        <input id="cropScientificName" type="text" class="form-control" placeholder="Ex: Also dera" aria-label="Scientific name">
                     </div>
                 </div>
                 <div class=" row">
@@ -254,11 +254,11 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Category</label>
-                        <input id="cropCategory" type="text" class="form-control" placeholder="Ex: Cereal" aria-label="Category">
+                        <input id="cropCategory" type="text" class="form-control" placeholder="Ex: Grains" aria-label="Category">
                     </div>
                     <div class="col">
                         <label class="form-label">Season</label>
-                        <input id="cropSeason" type="text" class="form-control" placeholder="Ex: Spring" aria-label="Season">
+                        <input id="cropSeason" type="text" class="form-control" placeholder="Ex: Winter" aria-label="Season">
                     </div>
                     <div class="col">
                         <label class="form-label">Field</label>
@@ -303,15 +303,15 @@
                     </div>
                     <div class="col">
                         <label class="form-label">First Name</label>
-                        <input id="staffFirstName" type="text" class="form-control" placeholder="Ex: Tony" aria-label="First Name">
+                        <input id="staffFirstName" type="text" class="form-control" placeholder="Ex: Himal" aria-label="First Name">
                     </div>
                     <div class="col">
                         <label class="form-label">Last Name</label>
-                        <input id="staffLastName" type="text" class="form-control" placeholder="Ex: Stark" aria-label="Last name">
+                        <input id="staffLastName" type="text" class="form-control" placeholder="Ex: Nimsara" aria-label="Last name">
                     </div>
                     <div class="col">
                         <label class="form-label">Designation</label>
-                        <input id="staffDesignation" type="text" class="form-control" placeholder="Ex: CEO" aria-label="Designation">
+                        <input id="staffDesignation" type="text" class="form-control" placeholder="Ex: Owner" aria-label="Designation">
                     </div>
                     <div class="col">
                         <label class="form-label">Gender</label>
@@ -337,23 +337,23 @@
                 <div class=" row">
                     <div class="col">
                         <label class="form-label">Building no or name </label>
-                        <input id="staffBuildingNo" type="text" class="form-control" placeholder="Ex: 28/D or Jayabima building" aria-label="Building no or name ">
+                        <input id="staffBuildingNo" type="text" class="form-control" placeholder="Ex: 659/Shadow Photography" aria-label="Building no or name ">
                     </div>
                     <div class="col">
                         <label class="form-label">Street or lane</label>
-                        <input id="staffStreet" type="text" class="form-control" placeholder="Ex: Rathnapura Road" aria-label="Street or lane">
+                        <input id="staffStreet" type="text" class="form-control" placeholder="Ex: Gurugalla road" aria-label="Street or lane">
                     </div>
                     <div class="col">
                         <label class="form-label">Main city</label>
-                        <input id="staffCity" type="text" class="form-control" placeholder="Ex: Diurumpitiya" aria-label="Main city">
+                        <input id="staffCity" type="text" class="form-control" placeholder="Ex: Thalduwa" aria-label="Main city">
                     </div>
                     <div class="col">
                         <label class="form-label">Main state</label>
-                        <input id="staffState" type="text" class="form-control" placeholder="Ex: Getahaththa" aria-label="Main state">
+                        <input id="staffState" type="text" class="form-control" placeholder="Ex: Avissawella" aria-label="Main state">
                     </div>
                     <div class="col-2">
                         <label class="form-label">Postal code</label>
-                        <input id="staffPostal" type="text" class="form-control" placeholder="Ex: 70620" aria-label="Postal code">
+                        <input id="staffPostal" type="text" class="form-control" placeholder="Ex: 10700" aria-label="Postal code">
                     </div>
                 </div>
                 <div class=" row">
@@ -363,7 +363,7 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Email Address</label>
-                        <input id="staffEmail" type="text" class="form-control" placeholder="Ex: tony@stark.com" aria-label="Email Address">
+                        <input id="staffEmail" type="text" class="form-control" placeholder="Ex: himal@gmail.com" aria-label="Email Address">
                     </div>
                     <div class="col">
                         <label class="form-label">Role</label>
@@ -465,7 +465,7 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Remarks</label>
-                        <input id="vehicleRemarks" type="text" class="form-control" placeholder="Ex: Kawada bn" aria-label="Remarks">
+                        <input id="vehicleRemarks" type="text" class="form-control" placeholder="Ex: Any more things" aria-label="Remarks">
                         <label id="vehicleRemarksCheck" style="color: red;"></label>
                     </div>
                 </div>
@@ -680,7 +680,7 @@
                     </div>
                     <div class="col">
                         <label class="form-label">Remarks</label>
-                        <input type="text" class="form-control" placeholder="Ex: Kawada bn" aria-label="Remarks">
+                        <input type="text" class="form-control" placeholder="Ex: Any more things" aria-label="Remarks">
                     </div>
                 </div>
                 <div class="custom-button">
